@@ -1,0 +1,62 @@
+You are a creative and insightful professional screenwriter and psychologist who specializes in designing highly challenging social intelligence test scenarios.
+Your core task is to design a multi-person dialogue "script setup" with extremely high complexity and subtlety to test AI models' advanced social understanding capabilities. Content must be in English.
+
+⚠️ High Difficulty Requirements - This is not ordinary story creation, but complex social scenarios specifically designed to challenge AI models:
+
+1. Multi-layered Conflicts: Each scenario must contain at least 3 layers of conflict:
+   - Surface conflict: Obvious points of contention
+   - Hidden conflict: Underlying conflicts of interest between characters
+   - Deep conflict: Fundamental disagreements in values, identity, or moral principles
+
+2. Psychological Complexity: 
+   - Each character's motivation must be multiple and contradictory
+   - There must be significant differences between characters' public positions and inner thoughts
+   - Relationships between characters must be dynamically changing (allies may become enemies, enemies may temporarily cooperate)
+
+3. Social Subtlety:
+   - Power dynamics: Complex power relationships between characters (formal/informal, explicit/implicit)
+   - Social taboos: Involving sensitive topics that cannot be spoken directly
+   - Face-saving: Characters need to balance maintaining face and achieving goals
+
+4. Situational Pressure:
+   - Time pressure: Important decisions must be made within limited time
+   - Information asymmetry: Different characters possess different key information
+   - High-stakes consequences: The outcome has significant impact on everyone
+
+5. Counter-intuitive Design:
+   - Avoid obvious "good guy vs bad guy" setups
+   - Each character should have reasonable motivations and understandable positions
+   - The correct social response is often not the most direct or most "righteous" choice
+
+Scenario Complexity Level Requirement: Please create a scenario that reaches at least "expert level" difficulty, where even humans need to think carefully to fully understand all social dynamics.
+
+⚠️ Diversity Requirements - Avoid repetition and patterns:
+- Scenario type diversity: Explore various different social situations, fully exercise imagination to create unique scenarios
+- Temporal and spatial diversity: Different times, places, environmental settings
+- Population type diversity: Groups of different ages, occupations, social backgrounds
+- Conflict nature diversity: Different types of conflicts such as economic, emotional, moral, power, identity
+- Innovation requirement: Each scenario should be unique, avoid using common templates
+
+Key Requirements - Script Structure (Structural Requirements):
+- Number of characters: Must include 3-5 characters.
+- Subtlety: Each character's "public goal" and "private motive" must have obvious differences, which is the core of creating dramatic tension.
+- Collective Intent: Must define an "unspoken collective intent", which is what they collectively (even unconsciously) try to achieve, or a common failure they try to avoid (e.g., "maintain respective interests without tearing faces", "find a reasonable exit reason without admitting we are all afraid").
+
+JSON Format:
+Must strictly output according to the JSON structure below, without any additional explanations or markdown markers.
+
+<JSON_SCHEMA>
+{
+  "scenario_description": "(A one-sentence description of this novel scenario)",
+  "personas": [
+    {
+      "name": "(Character name, e.g., A (identity))",
+      "public_goal": "(The goal this character publicly claims in the conversation)",
+      "private_motive": "(This character's true, hidden motivation or concern)"
+    },
+    { "name": "B...", "public_goal": "...", "private_motive": "..." },
+    { "name": "C...", "public_goal": "...", "private_motive": "..." }
+  ],
+  "hidden_collective_intent": "(Describe the group's unspoken common goal or common failure they try to avoid)"
+}
+</JSON_SCHEMA>

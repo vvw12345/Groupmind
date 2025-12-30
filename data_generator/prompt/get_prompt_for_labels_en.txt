@@ -1,0 +1,100 @@
+You are a top sociologist and AI Benchmark question design expert, specializing in creating extremely challenging social intelligence test questions.
+Your task is to generate a set of expert-level difficulty "multiple choice questions" (MCQ) for the specified "Trigger Moment" based on the given "scenario setup" and "dialogue transcript".
+
+⚠️ Extremely High Difficulty Requirements - These questions must be able to distinguish the most advanced AI models:
+- Questions should require deep social reasoning, not surface information extraction
+- Correct answers are often counter-intuitive, requiring understanding of complex social dynamics
+- Distractors must be highly deceptive, based on common social misconceptions or simplified thinking
+
+Context 1: Scenario Setup
+{scenario_data_json_string}
+
+Context 2: Dialogue Transcript & Trigger
+{dialogue_data_json_string}
+
+------
+Question Design Task Begins
+Please create questions for the following three tasks after the critical moment specified by "evaluation_trigger.trigger_turn_id".
+
+Task Logical Chain:
+1. Subtext Deciphering - Understanding the difference between literal meaning (Locutionary Act) and true intent (Illocutionary Act) of a single statement
+2. Atmosphere Recognition - Identifying group atmosphere formed by multiple statements with subtext
+3. Kuuki Yomenai (KY) Test - Based on understanding of atmosphere, choosing the most appropriate response
+
+Expert-level Question Design Rules:
+1. Single Choice (6 options): Each question must provide 6 options (A, B, C, D, E, F).
+
+2. Correct Answer Design: The correct answer must:
+   - Require multi-step reasoning to derive
+   - Consider implicit social rules and power dynamics
+   - Often be the most subtle rather than the most obvious choice
+   - Reflect consideration of long-term consequences rather than short-term reactions
+
+3. Advanced Distractor Design (this is key to distinguishing difficulty):
+   - Surface-correct type: Looks most direct and "correct" but ignores complex social factors
+   - Emotional reaction type: Based on intuitive emotional response but unsuitable for current social context
+   - Over-interpretation type: Over-analyzes or over-complicates the situation
+   - Social blind spot type: Ignores important social cues or power relationships
+   - Wrong timing type: Content may be correct but timing is inappropriate
+   - Detail error type: General direction is correct but key details are wrong
+
+4. Answer Distribution Requirements: 
+   - Position of correct answers must be completely randomized
+   - Avoid concentration of answers in certain options (e.g., too many C options)
+   - Each option should have reasonable probability of being selected
+
+5. Cognitive Load Requirements: Questions should require consideration of:
+   - Different perspectives and interests of multiple characters
+   - Explicit and implicit social rules
+   - Short-term and long-term consequences
+   - Social factors such as face-saving, authority, relationship maintenance!! Order must be randomized!!
+
+Output Format Requirements (JSON):
+<JSON_SCHEMA>
+{
+  "subtext_deciphering": {
+    "question": "(Based on trigger_turn_id or a key dialogue around it, generate a question about 'subtext deciphering'. Ask about the difference between the literal meaning and true intent of a character's statement. You can utilize the Private Motive field for design)",
+    "mcq_options": [
+      "A. (an interpretation of true intent, may be correct answer or distractor)",
+      "B. (an interpretation)",
+      "C. (an interpretation)",
+      "D. (an interpretation)",
+      "E. (an interpretation)",
+      "F. (an interpretation)"
+    ],
+    "correct_answer_index": (integer 0, 1, 2, 3, 4, or 5, pointing to the index of the correct answer)
+  },
+  "atmosphere_recognition": {
+    "question": "(Based on trigger_turn_id, generate a question about 'group atmosphere')",
+    "mcq_options": [
+      "A. (a description, may be correct answer or distractor)",
+      "B. (a description)",
+      "C. (a description)",
+      "D. (a description)",
+      "E. (a description)",
+      "F. (a description)"
+    ],
+    "correct_answer_index": (integer 0, 1, 2, 3, 4, or 5, pointing to the index of the correct answer)
+  },
+  "ky_test": {
+    "question": "(Based on trigger_turn_id, generate a question about 'most appropriate response')",
+    "mcq_options": [
+      "A. (a response, may be correct answer or distractor)",
+      "B. (a response)",
+      "C. (a response)",
+      "D. (a response)",
+      "E. (a response)",
+      "F. (a response)"
+    ],
+    "correct_answer_index": (index pointing to the 'appropriate' response)
+  }
+}
+</JSON_SCHEMA>
+
+⚠️ Critical Output Requirements:
+1. Must strictly output according to JSON_SCHEMA
+2. Do not include any additional explanations or markdown markers
+3. Ensure all quotes are properly escaped to avoid JSON format errors
+4. Use \" to escape quotes in question and option content
+5. Ensure JSON structure is complete with all brackets and commas correct
+6. Each mcq_options array must contain exactly 6 options with A. B. C. D. E. F. prefixes

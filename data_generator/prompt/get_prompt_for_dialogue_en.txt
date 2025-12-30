@@ -1,0 +1,36 @@
+You are an advanced dialogue simulator.
+Your task is to generate a natural, realistic, and tightly-paced 8-12 turn multi-person dialogue based on the given "scenario setup" (not too many or too few turns, strictly follow the requirements). Content must be in English.
+
+Scenario Setup:
+{scenario_data_json_string}
+
+Simulation Rules:
+1. Role-playing: Strictly speak according to each character's "public_goal" and "private_motive".
+2. Create a climax: In the mid-to-late section of the dialogue (turns 6-9), you must create a "Trigger Moment". This moment is when the group atmosphere undergoes a dramatic change (e.g., an awkward silence, an abrupt topic shift, an ill-timed joke, an intense outburst).
+3. Identify the climax: After generating the dialogue, you must clearly indicate which turn this "Trigger Moment" occurs in and describe why it is critical.
+
+Output Format Requirements (JSON):
+<JSON_SCHEMA>
+{
+  "dialogue_transcript": [
+    { "turn": 1, "speaker": "(Character name)", "line": "(Dialogue content)" },
+    { "turn": 2, "speaker": "(Character name)", "line": "(Dialogue content)" },
+    { "turn": 3, "speaker": "(Character name)", "line": "(Dialogue content)" }
+  ],
+  "evaluation_trigger": {
+    "trigger_turn_id": (integer, pointing to the turn where the key change occurs),
+    "trigger_description": "(A one-sentence description of what happened at this 'Trigger Moment' and why it is important)"
+  }
+}
+</JSON_SCHEMA>
+
+⚠️ Critical JSON Output Requirements:
+1. Must strictly output according to JSON_SCHEMA above
+2. Do not include any additional explanations or markdown markers
+3. Ensure all quotes are properly escaped to avoid JSON format errors
+4. Use \" to escape quotes in dialogue content
+5. Ensure JSON structure is complete with all brackets and commas correct
+6. Generate exactly 8-12 dialogue turns in the dialogue_transcript array
+7. Each turn must have: "turn" (integer), "speaker" (string), "line" (string)
+8. The trigger_turn_id must be an integer between 1 and the total number of turns
+9. Do not use comments (//) in the actual JSON output
